@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Engine</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rule Engine UI</h1>
+
+        <!-- Form to create a new rule -->
+        <div class="section">
+            <h2>Create Rule</h2>
+            <input type="text" id="ruleInput" placeholder="Enter rule string (e.g., age < 30)">
+            <button onclick="createRule()">Create Rule</button>
+            <p id="createRuleResult"></p>
+        </div>
+
+        <!-- Form to combine rules -->
+        <div class="section">
+            <h2>Combine Rules</h2>
+            <textarea id="combineRulesInput" placeholder="Enter multiple rules separated by new lines"></textarea>
+            <button onclick="combineRules()">Combine Rules</button>
+            <h3>Combined AST Result</h3>
+            <p id="combineRulesResult"></p>
+            <select id="combination-type">
+                <option value="AND">AND</option>
+                <option value="OR">OR</option>
+            </select>
+
+            <pre id="combinedASTResult"></pre> <!-- Use <pre> for preformatted text -->
+        </div>
+
+        <!-- Form to evaluate a rule -->
+        <div class="section">
+            <h2>Evaluate Rule</h2>
+            <textarea id="evaluationData" placeholder='Enter data as JSON (e.g., {"age": 35, "salary": 60000})'></textarea>
+            <input type="text" id="ruleId" placeholder="Enter Rule ID">
+            <button onclick="evaluateRule()">Evaluate</button>
+            <p id="evaluationResult"></p>
+        </div>
+    </div>
+    <script src="/static/js/script.js"></script>
+
+</body>
+</html>
